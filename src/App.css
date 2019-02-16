@@ -1,32 +1,94 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .container {
+    margin:0;
+    display: flex;
+    flex-direction: row;
   }
-  to {
-    transform: rotate(360deg);
+
+/*地图*/
+.map {
+  width:80%;
+  height:730px;
+}
+
+/*筛选*/
+.markerfilter {
+  min-width: 240px;
+  width: 20%;
+  height: 730px;
+  background: #8e8e93;
+  color: #fff;
+}
+
+.markerfilter h1 {
+  font-size: 20px;
+  height: 50px;
+  line-height: 50px;
+  text-indent: 20px;
+  font-weight: normal;
+}
+
+.markerfilter input[type='text'] {
+  display: block;
+  font-size: 14px;
+  padding: 8px;
+  border: 1px solid #eee;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  background: #efefef;
+}
+
+.markerfilter li {
+  font-size: 14px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.markerfilter li:hover {
+  background: #5a5a5a;
+}
+
+
+/*infowindow*/
+.infowindow h1 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.infowindow h2 {
+  font-size: 14px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.infowindow h2 a {
+}
+
+.infowindow p {
+  font-size: 14px;
+  line-height: 1.5;
+  height: 100px;
+  overflow: hidden;
+}
+
+.visibleNone {
+  display: none;
+}
+
+@media only screen and (max-width:600px ) {
+  .container {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .map {
+    width:100%;
+    height:400px;
+  }
+  .markerfilter {
+    width: 100%;
+    background: #8e8e93;
+    color: #fff;
   }
 }

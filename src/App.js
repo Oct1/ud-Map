@@ -1,28 +1,41 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import './App.css'
+import BaseMap from './aMap'
+import MarkerFilter from './MarkerFilter'
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      markers: []
+    }
+
+  }
+
+  componentDidMount() {
+    //加载地点数据
+    fetch('./markers.json', {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        }
+      }).then(res => res.json())
+      .then(data => {
+        this.setState(state => ({
+          markers: data.markers
+        }));
+      });
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className = 'container'>
+        <MarkerFilter markers = {this.state.markers}/>
+        <div className = 'map'>
+          <BaseMap markers = {this.state.markers}/>
+        </div>
       </div>
-    );
+    )
   }
 }
-
 export default App;

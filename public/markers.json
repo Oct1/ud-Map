@@ -1,0 +1,14 @@
+{
+  "markers": [
+    {"title": "杭州萧山国际机场", "id": 0, "position": {"latitude": 30.234992,"longitude": 120.431891}},
+    {"title": "湘湖旅游度假区", "id": 1, "position": {"latitude": 30.13357,"longitude": 120.210019}},
+    {"title": "少年宫广场", "id": 2, "position": {"latitude": 30.261108,"longitude": 120.155517}},
+    {"title": "和平广场", "id": 3, "position": {"latitude": 30.291054,"longitude": 120.176202}},
+    {"title": "龙湖杭州金沙天街", "id": 4, "position": {"latitude": 30.309952,"longitude": 120.326542}},
+    {"title": "杭州奥体博览城", "id": 5, "position": {"latitude": 30.231115,"longitude": 120.233227}},
+    {"title": "宝龙广场", "id": 6, "position": {"latitude": 30.195884,"longitude": 120.253225}},
+    {"title": "杭州乐园", "id": 7, "position": {"latitude": 30.160578,"longitude": 120.244943}},
+    {"title": "龙湖杭州滨江天街", "id": 8, "position": {"latitude": 30.200771,"longitude": 120.20421}},
+    {"title": "灵隐寺", "id": 9, "position": {"latitude": 30.239569,"longitude": 120.100876}}
+  ]
+}
