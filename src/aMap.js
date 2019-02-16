@@ -49,8 +49,7 @@ class BaseMap extends Component {
     //经过筛选的markers数据获取
     this.showmarkers = [];
 
-    //订阅MarkerFilter.js 发布事件：updateMarkersData、choseMarker
-    //updateMarkersData事件 获取筛选markers
+
     this.recieveMarkers = (query, data) => {
       this.setState({
         query: query
