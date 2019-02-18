@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Map,Marker,InfoWindow } from 'react-amap'
 import { event } from './eventEmitter'
+import { _fetch } from './_fetch'
 class BaseMap extends Component {
   constructor() {
     super();
@@ -68,13 +69,19 @@ class BaseMap extends Component {
     event.on('updateMarkersData', this.recieveMarkers)
     event.on('choseMarker', this.handleMarkerClick)
 
+
     //参考 https://blog.csdn.net/qq_32623363/article/details/76785368
     this.getWikiData = (title) => {
-        fetch(`https://zh.wikipedia.org/w/api.php?action=query&list=search&srsearch=${title}&prop=info&inprop=url&utf8=&format=json&origin=*`, {
+        _fetch(fetch(`https://zh.wikipedia.org/w/api.php?action=query&list=search&srsearch=${title}&prop=info&inprop=url&utf8=&format=json&origin=*`, {
           method: 'GET',
           headers: new Headers({
             'Api-User-Agent': 'Example/1.0'
           })
+        }),200) 
+        .then(function(response) {
+          if (response.ok) {
+            return response.json();
+          }
         })
         .then(data => {
           console.log(data)

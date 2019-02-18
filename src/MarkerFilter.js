@@ -27,6 +27,11 @@ class MarkerFilter extends Component {
 		}
 		this.handleLiClick = (title, position) => {
 			event.emit('choseMarker', title, position)
+		    window.scrollTo({
+		      left: 0,
+		      top: 0,
+		      behavior: 'smooth',
+		    });
 		}
 		this.handleKeyPress = (e, title, position) => {
 			if (e.key === 'Enter') {
